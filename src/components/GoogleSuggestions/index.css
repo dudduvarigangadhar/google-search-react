@@ -1,0 +1,46 @@
+/* Write your CSS here */
+.google-container-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-logo {
+  height: 140px;
+  width: 300px;
+}
+
+.search-field {
+  width: 350px;
+  height: 30px;
+}
+
+.search-icon {
+  height: 20px;
+  width: 20px;
+  /* margin-top: 60px; */
+  margin-right: 8px;
+  margin-left: 10px;
+  padding-top: 9px;
+}
+
+.google-search-field {
+  width: 470px;
+  border-radius: 10px;
+  /* background-color: aqua; */
+  margin-top: 40px;
+}
+
+.search-suggestions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.arrow-search-logo {
+  height: 20px;
+  width: 20px;
+  margin-top: 12px;
+  margin-right: 10px;
+}
