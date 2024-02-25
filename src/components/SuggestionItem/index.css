@@ -1,1 +1,4 @@
-/* Write your CSS here */
+.search-suggestions {
+  height: 30px;
+  list-style-type: none;
+}
