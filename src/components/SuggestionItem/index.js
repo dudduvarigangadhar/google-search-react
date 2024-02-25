@@ -1,13 +1,14 @@
 import './index.css'
 
 const SuggestionItem = props => {
-  const {suggestionsList} = props
+  const {suggestionsList, updateSearch} = props
+  const {suggestion} = suggestionsList
   const onclickSearch = () => {
-    console.log('onclick search')
+    updateSearch(suggestion)
   }
 
   return (
-    <div className="search-suggestions">
+    <li className="search-suggestions">
       <p>{suggestionsList.suggestion}</p>
       <img
         src="https://assets.ccbp.in/frontend/react-js/diagonal-arrow-left-up.png"
@@ -15,7 +16,7 @@ const SuggestionItem = props => {
         alt="arrow"
         onClick={onclickSearch}
       />
-    </div>
+    </li>
   )
 }
 
