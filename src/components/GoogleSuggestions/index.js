@@ -5,16 +5,25 @@ import './index.css'
 class GoogleSuggestions extends Component {
   state = {
     searchInput: '',
+    suggestionsList: this.props,
   }
 
-  onSearch = event => {
-    const {searchInput} = this.state
-    console.log(event.target.value)
+  onChangeSearchInput = event => {
     this.setState({searchInput: event.target.value})
   }
 
+  updateSearch = value => {
+    this.setState({searchInput: value})
+  }
+
   render() {
+    const {searchInput} = this.state
     const {suggestionsList} = this.props
+    const searchResults = suggestionsList.filter(eachSug =>
+      // const search =
+      eachSug.suggestion.toLowerCase().includes(searchInput),
+    )
+    // const suggestion = this.onSearch
     return (
       <div className="google-container-box">
         <>
@@ -33,16 +42,16 @@ class GoogleSuggestions extends Component {
               type="search"
               placeholder="Search Google"
               className="search-field"
-              onChange={this.onSearch}
+              onChange={this.onChangeSearchInput}
+              value={searchInput}
             />
             <div>
-              <ul>
-                {/* <SuggestionItem suggestionsList={suggestionsList} /> */}
-                {suggestionsList.map(eachSuggestion => (
+              <ul className="list-container">
+                {searchResults.map(eachSuggestion => (
                   <SuggestionItem
                     suggestionsList={eachSuggestion}
                     key={eachSuggestion.id}
-                    // onSearch={this.onSearch}
+                    updateSearch={this.updateSearch}
                   />
                 ))}
               </ul>
